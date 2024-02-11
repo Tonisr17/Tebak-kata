@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en" translate="no">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="google" content="notranslate" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tebak Kata</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+
+    <style>
+      body {
+        padding: 5rem 1rem 1rem;
+        background: #333;
+        color: #888;
+        font-size: 1rem;
+        font-family: Monospace;
+      }
+
+      #clueContainer {
+        color: #fff;
+        font-size: 1.2rem;
+        margin: 2rem 0;
+      }
+
+      #inputContainer {
+        display: flex;
+        flex-flow: wrap;
+        justify-content: center;
+        align-items: center;
+        margin: 3rem 0;
+      }
+
+      #inputContainer input {
+        --size: 2.5rem;
+        display: inline-block;
+        text-align: center;
+        width: var(--size);
+        height: var(--size);
+        border: none;
+        border: 2px solid transparent;
+        border-bottom-color: #555;
+        margin: 0.25rem;
+        text-transform: uppercase;
+        max-width: max-content;
+        font-weight: bold;
+        outline: none;
+        background: transparent;
+        font-size: 1.2rem;
+        color: #fff;
+      }
+
+      .correct {
+        --color: #44ff00;
+        color: var(--color) !important;
+        border-bottom-color: var(--color) !important;
+      }
+
+      .wrong {
+        --color: #ff4558;
+        color: var(--color) !important;
+        border-bottom-color: var(--color) !important;
+      }
+
+      #progressContainer {
+        display: none;
+        margin-top: 2rem;
+      }
+
+      #ifGameOverContainer {
+        display: none;
+      }
+
+      #ifGameOverContainer h1 {
+        font-size: 2rem;
+        color: #ff4558;
+        margin: 4rem 0rem 2rem;
+      }
+
+      #startNumContainer {
+        position: fixed;
+        top: 0;
+        left: 0;
+        font-size: 2rem;
+        color: #ffc107;
+        padding: 0.6rem 1rem;
+        z-index: -1;
+      }
+
+      #healtsContainer {
+        position: fixed;
+        top: 0;
+        right: 0;
+        padding: 1rem;
+      }
+
+      #healtsContainer > span {
+        display: inline-block;
+        margin: 0.2rem;
+      }
+
+      .game-ended {
+        font-size: 1.6rem;
+        margin: 2rem 0;
+      }
+
+      #countDownContainer {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: #333;
+        display: none;
+        font-size: 5rem;
+        color: #ffc107;
+        align-items: center;
+        justify-content: center;
+      }
+
+      footer {
+        margin-top: 10rem;
+        font-size: 0.9rem;
+      }
+    </style>
+  </head>
+  <body class="text-center">
+    <div class="container mx-auto">
+      <h1 class="text-warning mb-4 fw-bold">Tebak Kata</h1>
+
+      <main>
+        <div class="info">
+          Jawaban bisa berupa sinonim, antonim, atau fakta.
+        </div>
+
+        <div id="countDownContainer"></div>
+
+        <div id="clueContainer"></div>
+        <div id="inputContainer"></div>
+        <div id="progressContainer"></div>
+
+        <div id="ifGameOverContainer">
+          <h1>Game Over!</h1>
+          <p>Silakan refresh halaman untuk mencoba lagi</p>
+        </div>
+      </main>
+
+      <div id="startNumContainer"></div>
+      <div id="healtsContainer"></div>
+    </div>
+
+    <footer class="text-center">Made with ❤️ by Toni Supendi R</footer>
+
+    <script src="./game.js"></script>
+  </body>
+</html>
